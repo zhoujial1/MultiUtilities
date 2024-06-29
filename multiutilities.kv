@@ -1,24 +1,21 @@
 #:import RandomSelectionContent Tab1.RandomSelection.RandomSelectionContent
-#:import UnitConversionContent Tab2.UnitConversion.UnitConversionContent
-#:import CurrencyConversionContent Tab3.CurrencyConversion.CurrencyConversionContent
-#:import TimeZoneConversionContent Tab4.TimeZoneConversion.TimeZoneConversionContent
-#:import TextUtilitiesContent Tab5.TextUtilities.TextUtilitiesContent
+#:import ConversionContent Tab2.Conversion.ConversionContent
+#:import TextUtilitiesContent Tab3.TextUtilities.TextUtilitiesContent
+
+<TabbedPanel>:
+    tab_width: 200
+    do_default_tab: False
+
+<TabbedPanelItem>:
+    
 
 <MultiUtilitiesUI>:
-    do_default_tab: False
-    tab_width: 200
     TabbedPanelItem:
         text: 'Random Selection'
         RandomSelectionContent:
     TabbedPanelItem:
-        text: 'Unit Conversion'
-        UnitConversionContent:
-    TabbedPanelItem:
-        text: 'Currency Conversion'
-        CurrencyConversionContent:
-    TabbedPanelItem:
-        text: 'Time Zone Conversion'
-        TimeZoneConversionContent:
+        text: 'Conversion'
+        ConversionContent:
     TabbedPanelItem:
         text: 'Text Utilities'
         TextUtilitiesContent:
