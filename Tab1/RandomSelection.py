@@ -1,4 +1,5 @@
 import random
+import string
 from kivy.uix.tabbedpanel import TabbedPanel
 from kivy.lang import Builder
 
@@ -28,3 +29,19 @@ class RandomSelectionContent(TabbedPanel):
         except ValueError:
             # Handle the case where the input is not a valid integer
             self.ids.random_number.text = "Please enter valid integers."
+            
+    def show_number(self, *args):
+        # args[1] contains the new value of the slider
+        slider_value = args[1]
+        # Update the label's text with the new slider value, rounded to an integer
+        self.ids.display_number.text = str(int(slider_value))
+        
+    def generate_letters(self):
+        # Retrieve the number of letters to generate from the display_number label
+        num_letters = int(self.ids.display_number.text)
+        
+        # Generate a random string of letters
+        random_letters = ''.join(random.choices(string.ascii_letters, k=num_letters))
+        
+        # Display the generated string in the random_letters label
+        self.ids.random_letters.text = "Your Letters: " + random_letters
