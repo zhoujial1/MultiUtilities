@@ -55,5 +55,17 @@
                 text: ''
     TabbedPanelItem:
         text: 'Date Generator'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Random Date Generator'
+                font_size: 30
+                bold: True
+            Button:
+                text: 'Generate date'
+                on_press: root.generate_date()
+            Label:
+                id: random_date
+                text: ''
     TabbedPanelItem:
         text: 'Password Generator'
