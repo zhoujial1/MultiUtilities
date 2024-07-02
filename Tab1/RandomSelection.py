@@ -63,3 +63,36 @@ class RandomSelectionContent(TabbedPanel):
 
         # Format the date and display it
         self.ids.random_date.text = "Your Random Date: " + random_date.strftime('%Y-%m-%d')
+    
+    # Display the number for the password slider
+    def show_number_password(self, *args):
+        # args[1] contains the new value of the slider
+        slider_value = args[1]
+        # Update the label's text with the new slider value, rounded to an integer
+        self.ids.display_number_password.text = str(int(slider_value))
+    # Generate the random password function
+    def generate_password(self):
+        # Initialize an empty string to hold the possible characters for the password
+        possible_chars = ''
+
+        # Check the state of each checkbox and concatenate the appropriate characters
+        if self.ids.include_letters.active:
+            possible_chars += string.ascii_letters  # Add uppercase and lowercase letters
+        if self.ids.include_numbers.active:
+            possible_chars += string.digits  # Add digits
+        if self.ids.include_special_chars.active:
+            possible_chars += string.punctuation  # Add special characters
+
+        # Retrieve the desired password length from the slider
+        password_length = int(self.ids.display_number_password.text)
+
+        # Ensure that there is at least one type of character selected
+        if not possible_chars:
+            self.ids.generated_password.text = "Please select at least one character type."
+            return
+
+        # Generate the password
+        password = ''.join(random.choices(possible_chars, k=password_length))
+
+        # Display the generated password
+        self.ids.generated_password.text = password

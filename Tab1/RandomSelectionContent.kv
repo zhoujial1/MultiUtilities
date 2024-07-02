@@ -38,15 +38,17 @@
                 bold: True
             Label:
                 text: 'Select the number of letters'
-            Label:
-                id: display_number
-                text: '1'
-            Slider:
-                min: 1
-                max: 100
-                step: 1
-                orientation: 'horizontal'
-                on_value: root.show_number(*args)
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    id: display_number
+                    text: '1'
+                Slider:
+                    min: 1
+                    max: 50
+                    step: 1
+                    orientation: 'horizontal'
+                    on_value: root.show_number(*args)
             Button:
                 text: 'Generate Letters'
                 on_press: root.generate_letters()
@@ -69,3 +71,49 @@
                 text: ''
     TabbedPanelItem:
         text: 'Password Generator'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Random Password Generator'
+                font_size: 30
+                bold: True
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    id: display_number_password
+                    text: '1'
+                Slider:
+                    min: 1
+                    max: 50
+                    step: 1
+                    orientation: 'horizontal'
+                    on_value: root.show_number_password(*args)
+            BoxLayout:
+                orientation: 'horizontal'
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Include Letters'
+                    CheckBox:
+                        id: include_letters
+                        active: True
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Include Numbers'
+                    CheckBox:
+                        id: include_numbers
+                        active: True
+                BoxLayout:
+                    orientation: 'vertical'
+                    Label:
+                        text: 'Include Special Characters'
+                    CheckBox:
+                        id: include_special_chars
+                        active: False
+            Button:
+                text: 'Generate Password'
+                on_press: root.generate_password()
+            Label:
+                id: generated_password
+                text: ''
