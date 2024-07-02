@@ -4,34 +4,45 @@
         text: 'Number Generator'
         BoxLayout:
             orientation: 'vertical'
+            padding: [30,10,30,10]
             Label:
                 text: 'Random Number Generator'
                 font_size: 30
                 bold: True
             BoxLayout:
                 orientation: 'horizontal'
+                padding: [0,40,0,40]
                 Label:
                     text: 'Minimum Value:'
+                    font_size: 15
                 TextInput:
                     id: min_value
                     multiline: False
                     input_filter: 'int'
                 Label:
                     text: 'Maximum Value:'
+                    font_size: 15
                 TextInput:
                     id: max_value
                     multiline: False
                     input_filter: 'int'
-            Button:
-                text: 'Generate Random Number'
-                on_press: root.generate_random_number()
             Label:
                 id: random_number
                 text: ''
+                bold: True
+                font_size: 20
+            BoxLayout:
+                padding: [0, 10, 0, 10]
+                size_hint_y: None
+                height: '100dp'
+                Button:
+                    text: 'Generate Random Number'
+                    on_press: root.generate_random_number()
     TabbedPanelItem:
         text: 'Letters Generator'
         BoxLayout:
             orientation: 'vertical'
+            padding: [30,10,30,10]
             Label:
                 text: 'Random Letters Generator'
                 font_size: 30
@@ -49,30 +60,40 @@
                     step: 1
                     orientation: 'horizontal'
                     on_value: root.show_number(*args)
-            Button:
-                text: 'Generate Letters'
-                on_press: root.generate_letters()
             Label:
                 id: random_letters
                 text: ''
+            BoxLayout:
+                padding: [0, 10, 0, 10]
+                size_hint_y: None
+                height: '100dp'
+                Button:
+                    text: 'Generate Letters'
+                    on_press: root.generate_letters()
     TabbedPanelItem:
         text: 'Date Generator'
         BoxLayout:
             orientation: 'vertical'
+            padding: [30,10,30,10]
             Label:
                 text: 'Random Date Generator'
                 font_size: 30
                 bold: True
-            Button:
-                text: 'Generate date'
-                on_press: root.generate_date()
             Label:
                 id: random_date
                 text: ''
+            BoxLayout:
+                padding: [0, 10, 0, 10]
+                size_hint_y: None
+                height: '100dp'
+                Button:
+                    text: 'Generate date'
+                    on_press: root.generate_date()
     TabbedPanelItem:
         text: 'Password Generator'
         BoxLayout:
             orientation: 'vertical'
+            padding: [30,10,30,10]
             Label:
                 text: 'Random Password Generator'
                 font_size: 30
@@ -111,9 +132,13 @@
                     CheckBox:
                         id: include_special_chars
                         active: False
-            Button:
-                text: 'Generate Password'
-                on_press: root.generate_password()
             Label:
                 id: generated_password
                 text: ''
+            BoxLayout:
+                padding: [0, 10, 0, 10]
+                size_hint_y: None
+                height: '100dp'
+                Button:
+                    text: 'Generate Password'
+                    on_press: root.generate_password()

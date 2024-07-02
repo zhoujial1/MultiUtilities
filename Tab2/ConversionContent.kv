@@ -1,7 +1,40 @@
 
 <ConversionContent>:
     TabbedPanelItem:
-        text: 'Unit'
+        text: 'Weight'
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [10,0,10,350]
+            Label:
+                text: 'Weight Unit Conversion'
+                font_size: 30
+                bold: True
+            BoxLayout:
+                orientation: 'horizontal'
+                Spinner:
+                    id: spinner_from
+                    text: 'Select Unit'
+                    values: ['Tonne','Kilogram','Gram','Miligram','Microgram','Imperial Ton','Stone','Pound','Ounce']
+                    on_text: root.convert_weight()
+                TextInput:
+                    id: input_from
+                    multiline: False
+                    input_filter: 'float'
+                    on_text: root.on_input_change(self, self.text)
+                Label:
+                    text: '='
+                    font_size: 30
+                    bold: True
+                Spinner:
+                    id: spinner_to
+                    text: 'Select Unit'
+                    values: ['Tonne','Kilogram','Gram','Miligram','Microgram','Imperial Ton','Stone','Pound','Ounce']
+                    on_text: root.convert_weight()
+                TextInput:
+                    id: input_to
+                    multiline: False
+                    input_filter: 'float'
+                    readonly: True
     TabbedPanelItem:
         text: 'Currency'
     TabbedPanelItem:
