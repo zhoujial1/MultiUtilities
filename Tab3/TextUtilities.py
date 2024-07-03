@@ -1,8 +1,8 @@
-from kivy.uix.gridlayout import GridLayout
-from kivy.uix.label import Label
+from kivy.uix.boxlayout import BoxLayout
 
-class TextUtilitiesContent(GridLayout):
+
+class TextUtilitiesContent(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.cols = 1
-        self.add_widget(Label(text="This is Tab 5"))
+        
+    

@@ -1,5 +1,6 @@
 
 <RandomSelectionContent>:
+    # TabbedPanelItem for Number Generator
     TabbedPanelItem:
         text: 'Number Generator'
         BoxLayout:
@@ -26,11 +27,18 @@
                     id: max_value
                     multiline: False
                     input_filter: 'int'
-            Label:
-                id: random_number
-                text: ''
-                bold: True
-                font_size: 20
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: [0,40,0,50]
+                TextInput:
+                    id: random_number
+                    text: ''
+                    bold: True
+                    font_size: 20
+                    readonly: True
+                    halign: 'center'
+                    valign: 'center'
+                    multiline: False
             BoxLayout:
                 padding: [0, 10, 0, 10]
                 size_hint_y: None
@@ -38,6 +46,8 @@
                 Button:
                     text: 'Generate Random Number'
                     on_press: root.generate_random_number()
+    
+    # TabbedPanelItem for Letters Generator
     TabbedPanelItem:
         text: 'Letters Generator'
         BoxLayout:
@@ -60,9 +70,18 @@
                     step: 1
                     orientation: 'horizontal'
                     on_value: root.show_number(*args)
-            Label:
-                id: random_letters
-                text: ''
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: [0,25,0,30]
+                TextInput:
+                    id: random_letters
+                    text: ''
+                    bold: True
+                    font_size: 20
+                    readonly: True
+                    halign: 'center'
+                    valign: 'center'
+                    multiline: False
             BoxLayout:
                 padding: [0, 10, 0, 10]
                 size_hint_y: None
@@ -70,6 +89,8 @@
                 Button:
                     text: 'Generate Letters'
                     on_press: root.generate_letters()
+
+    # TabbedPanelItem for Date Generator
     TabbedPanelItem:
         text: 'Date Generator'
         BoxLayout:
@@ -79,9 +100,18 @@
                 text: 'Random Date Generator'
                 font_size: 30
                 bold: True
-            Label:
-                id: random_date
-                text: ''
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: [0,70,0,70]
+                TextInput:
+                    id: random_date
+                    text: ''
+                    bold: True
+                    font_size: 20
+                    readonly: True
+                    halign: 'center'
+                    valign: 'center'
+                    multiline: False
             BoxLayout:
                 padding: [0, 10, 0, 10]
                 size_hint_y: None
@@ -89,6 +119,8 @@
                 Button:
                     text: 'Generate date'
                     on_press: root.generate_date()
+
+    # TabbedPanelItem for Password Generator
     TabbedPanelItem:
         text: 'Password Generator'
         BoxLayout:
@@ -132,9 +164,18 @@
                     CheckBox:
                         id: include_special_chars
                         active: False
-            Label:
-                id: generated_password
-                text: ''
+            BoxLayout:
+                orientation: 'horizontal'
+                padding: [0,25,0,30]
+                TextInput:
+                    id: generated_password
+                    text: ''
+                    bold: True
+                    font_size: 20
+                    readonly: True
+                    halign: 'center'
+                    valign: 'center'
+                    multiline: False
             BoxLayout:
                 padding: [0, 10, 0, 10]
                 size_hint_y: None
