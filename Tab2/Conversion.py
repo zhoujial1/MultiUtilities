@@ -24,20 +24,29 @@ class ConversionContent(TabbedPanel):
             'Ounce': 0.0283495231,
         }
         
+        # Get the incoming unit
         from_unit = self.ids.spinner_from.text
+        # Get the outgoing unit
         to_unit = self.ids.spinner_to.text
+        # Get the input value
         input_value = self.ids.input_from.text
         
+        # Check if the input value is a number
         try:
             input_value = float(input_value)
         except ValueError:
             self.ids.input_to.text = 'Invalid input'
             return
         
+        # Check if the incoming and outgoing units are in the conversion factors
         if from_unit in conversion_factors and to_unit in conversion_factors:
+            # Convert the input value to kilogram
             value_in_kg = input_value * conversion_factors[from_unit]
+            # Convert the kilogram value to the outgoing unit
             converted_value = value_in_kg / conversion_factors[to_unit]
+            # Update the output text with the converted value
             self.ids.input_to.text = str(converted_value)
+        # If the incoming or outgoing units are not in the conversion factors
         else:
             self.ids.input_to.text = 'Select valid units'
 
