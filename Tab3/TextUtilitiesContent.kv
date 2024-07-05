@@ -1,0 +1,86 @@
+
+<TextUtilitiesContent>
+    orientation: 'vertical'
+    padding: [30,10,30,10]
+    Label:
+        text: 'Select Options for Text Utilities'
+        font_size: 30
+        bold: True
+    BoxLayout:
+        orientation: 'horizontal'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'All Caps'
+            CheckBox:
+                id: all_caps
+                active: False
+                on_active: root.update_output()
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'All Lower'
+            CheckBox:
+                id: all_lower
+                active: False
+                on_active: root.update_output()
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Title Case'
+            CheckBox:
+                id: title_case
+                active: False
+                on_active: root.update_output()
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Swap Case'
+            CheckBox:
+                id: swap_case
+                active: False
+                on_active: root.update_output()
+
+    BoxLayout:
+        orientation: 'horizontal'
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Reverse Text'
+            CheckBox:
+                id: reverse_text
+                active: False
+                on_active: root.update_output()
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Strip Spaces'
+            CheckBox:
+                id: strip_spaces
+                active: False
+                on_active: root.update_output()
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Strip Punctuation'
+            CheckBox:
+                id: strip_punctuation
+                active: False
+                on_active: root.update_output()
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Strip Numbers'
+            CheckBox:
+                id: strip_numbers
+                active: False
+                on_active: root.update_output()
+    TextInput:
+        id: text_input
+        on_text: root.update_output()
+    Label:
+        text: 'OUTPUT'
+    TextInput:
+        id: output
+        text: ''
+        readonly: True
