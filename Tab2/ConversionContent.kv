@@ -37,6 +37,39 @@
                     readonly: True
     TabbedPanelItem:
         text: 'Currency'
-        
+
     TabbedPanelItem:
         text: 'Time'
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [10,0,10,350]
+            Label:
+                text: 'Time Unit Conversion'
+                font_size: 30
+                bold: True
+            BoxLayout:
+                orientation: 'horizontal'
+                Spinner:
+                    id: spinner_from_time
+                    text: 'Select Unit'
+                    values: ['Second','Minute','Hour','Day','Week','Month','Year']
+                    on_text: root.convert_time()
+                TextInput:
+                    id: input_from_time
+                    multiline: False
+                    input_filter: 'float'
+                    on_text: root.on_input_change_time(self, self.text)
+                Label:
+                    text: '='
+                    font_size: 30
+                    bold: True
+                Spinner:
+                    id: spinner_to_time
+                    text: 'Select Unit'
+                    values: ['Second','Minute','Hour','Day','Week','Month','Year']
+                    on_text: root.convert_time()
+                TextInput:
+                    id: input_to_time
+                    multiline: False
+                    input_filter: 'float'
+                    readonly: True
